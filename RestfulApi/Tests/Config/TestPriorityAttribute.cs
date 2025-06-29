@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace RestfulApi.Tests.Config
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
