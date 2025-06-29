@@ -30,7 +30,7 @@ namespace RestfulApi.Tests
             var response = await _client.ExecuteAsync(request);
             response.StatusCode.Should().Be(HttpStatusCode.OK);
             var objectList = JsonConvert.DeserializeObject<List<ResponseObject>>(response.Content);
-            objectList.Should().NotBeNull("deserialized list should not be null");
+            objectList.Should().NotBeNull("list should not be null");
             objectList.Count.Should().BeGreaterThan(1);
 
         }
