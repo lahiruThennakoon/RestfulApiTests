@@ -30,6 +30,7 @@ namespace RestfulApi.Tests
             var response = await _client.ExecuteAsync(request);
             response.StatusCode.Should().Be(HttpStatusCode.OK);
             var objectList = JsonConvert.DeserializeObject<List<ResponseObject>>(response.Content);
+            objectList.Should().NotBeNull("deserialized list should not be null");
             objectList.Count.Should().BeGreaterThan(1);
 
         }
@@ -39,7 +40,7 @@ namespace RestfulApi.Tests
         {
             RequestObject requestObject = TestData.GetValidObject();
             var created = await CreateObjectAsync(requestObject);
-            created.id.Should().NotBeNullOrEmpty();
+            created.id.Should().NotBeNullOrEmpty("the created object should have a valid ID");
             created.name.Should().Be(TestData.APPLE_IPHONE_17_PRO);
 
         }
