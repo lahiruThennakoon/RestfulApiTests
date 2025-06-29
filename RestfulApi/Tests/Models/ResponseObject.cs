@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace RestfulApi.Tests.Models
 {
 
